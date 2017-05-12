@@ -56,6 +56,13 @@ public class ChatFragment extends EaseChatFragment implements EaseChatFragment.E
     }
 
     @Override
+    public void onActivityCreated(Bundle savedInstanceState) {
+        super.onActivityCreated(savedInstanceState);
+        //隐藏titlebar
+       // hideTitleBar();
+    }
+
+    @Override
     protected void setUpView() {
         //TODO 应该是这儿的问题
         setChatFragmentListener(this);

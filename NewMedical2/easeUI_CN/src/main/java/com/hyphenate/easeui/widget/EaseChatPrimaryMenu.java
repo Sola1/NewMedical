@@ -129,7 +129,7 @@ public class EaseChatPrimaryMenu extends EaseChatPrimaryMenuBase implements OnCl
         editText.setOnEditorActionListener(new TextView.OnEditorActionListener() {
             @Override
             public boolean onEditorAction(TextView v, int actionId, KeyEvent event) {
-                EMLog.d("key", "keyCode:" + event.getKeyCode() + " action" + event.getAction() + " ctrl:" + ctrlPress);
+//                EMLog.d("key", "keyCode:" + event.getKeyCode() + " action" + event.getAction() + " ctrl:" + ctrlPress);
                 if (actionId == EditorInfo.IME_ACTION_SEND ||
                         (event.getKeyCode() == KeyEvent.KEYCODE_ENTER &&
                          event.getAction() == KeyEvent.ACTION_DOWN &&

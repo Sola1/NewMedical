@@ -1,6 +1,5 @@
 package com.example.asus.newmedical.fragment;
 
-import android.content.Context;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
@@ -11,14 +10,11 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.example.asus.newmedical.HandMessage;
 import com.example.asus.newmedical.R;
 import com.example.asus.newmedical.RecyclerClick;
 import com.example.asus.newmedical.adapter.DoctorAdapter;
 import com.example.asus.newmedical.bean.HelperBean;
-import com.hyphenate.chat.EMConversation;
 import com.hyphenate.easeui.EaseConstant;
-import com.hyphenate.easeui.ui.EaseConversationListFragment;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -33,24 +29,16 @@ public class DoctorFragment extends Fragment {
     private String[] sex=new String[]{"男","女","男"};
     private int[] age=new int[]{22,40,55};
     private String[] content=new String[]{"头痛","嗓子痛","感冒"};
-
     private RecyclerView recyclerView;
     private DoctorAdapter doctorAdapter;
     private List<HelperBean> data;
 
-//    private HandMessage mHandMessage;
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view=inflater.inflate(R.layout.fragment_doctor,container,false);
         return view;
     }
-
-//    @Override
-//    public void onAttach(Context context) {
-//        super.onAttach(context);
-//        mHandMessage = (HandMessage) context;
-//    }
 
     @Override
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
@@ -74,24 +62,9 @@ public class DoctorFragment extends Fragment {
                 //启动会话列表
                 HelperFragment helperFragment = (HelperFragment) getActivity().getSupportFragmentManager().findFragmentById(R.id.helper);
                 helperFragment.getContent(EaseConstant.EXTRA_USER_ID,
-                        "ceshi2",
+                        "ceshi",
                         EaseConstant.EXTRA_CHAT_TYPE,
                         EaseConstant.CHATTYPE_SINGLE);
-//
-//                EaseConversationListFragment conversationListFragment = new EaseConversationListFragment();
-//                conversationListFragment.setConversationListItemClickListener(new EaseConversationListFragment.EaseConversationListItemClickListener() {
-//                    @Override
-//                    public void onListItemClicked(EMConversation conversation) {
-//                        Log.e("ggggggg", "onListItemClicked: ");
-////                        mHandMessage.sendMsg
-////                                (EaseConstant.EXTRA_USER_ID,
-////                                        conversation.conversationId(),
-////                                        EaseConstant.EXTRA_CHAT_TYPE,
-////                                        EaseConstant.CHATTYPE_SINGLE);
-//                        //mHandMessage.sendType(EaseConstant.EXTRA_CHAT_TYPE,EaseConstant.CHATTYPE_SINGLE);
-//
-//                    }
- //               });
             }
         });
     }

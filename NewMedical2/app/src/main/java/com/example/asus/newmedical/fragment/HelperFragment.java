@@ -12,6 +12,8 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.example.asus.newmedical.R;
+import com.hyphenate.chat.EMChatManager;
+import com.hyphenate.chat.EMMessage;
 import com.hyphenate.easeui.EaseConstant;
 
 
@@ -31,25 +33,18 @@ public class HelperFragment extends Fragment {
     @Override
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
-       // ChatFragment chatFragment = new ChatFragment();
-//        Bundle args = getArguments();
-//        Log.e("eeeeeeeee",args.toString());
-//        //传入参数
-//        chatFragment.setArguments(args);
- //       getChildFragmentManager().beginTransaction().add(R.id.fragment_helper_ask_linearLayout, chatFragment).commit();
-
-
     }
-    public void getContent(String userName,String userId,String type,int single){
+    public void getContent(String userName, String userId, String type, int single){
         Log.e(TAG, userName + "  "+ userId + "  " + type + "  " + single);
+        ChatFragment chatFragment = new ChatFragment();
         Bundle bundle = new Bundle();
         bundle.putString("userName",userName);
         bundle.putString("userId",userId);
         bundle.putString("type",type);
         bundle.putInt("single",single);
-        ChatFragment chatFragment = new ChatFragment();
         chatFragment.setArguments(bundle);
-        getChildFragmentManager().beginTransaction().replace(R.id.fragment_helper_ask_linearLayout, chatFragment).commit();
+        getChildFragmentManager().beginTransaction().add(R.id.fragment_helper_ask_linearLayout, chatFragment).commit();
+
 
 
     }

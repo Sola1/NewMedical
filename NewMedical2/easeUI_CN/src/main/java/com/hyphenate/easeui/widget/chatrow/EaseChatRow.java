@@ -2,6 +2,7 @@ package com.hyphenate.easeui.widget.chatrow;
 
 import android.app.Activity;
 import android.content.Context;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.BaseAdapter;
@@ -174,6 +175,7 @@ public abstract class EaseChatRow extends LinearLayout {
                 
                 @Override
                 public void onSuccess() {
+                    Log.e(TAG, "onSuccess: " );
                     updateView();
                 }
                 
@@ -191,6 +193,7 @@ public abstract class EaseChatRow extends LinearLayout {
                 
                 @Override
                 public void onError(int code, String error) {
+                    Log.e( "onError: ",error);
                     updateView(code, error);
                 }
             };
@@ -316,6 +319,7 @@ public abstract class EaseChatRow extends LinearLayout {
     }
 
     protected void updateView(final int errorCode, final String desc) {
+        Log.e( "updateView: ", errorCode + "  " +desc);
         activity.runOnUiThread(new Runnable() {
             public void run() {
                 if (errorCode == EMError.MESSAGE_INCLUDE_ILLEGAL_CONTENT) {
