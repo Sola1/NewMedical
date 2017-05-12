@@ -62,7 +62,7 @@ public class DoctorFragment extends Fragment {
                 //启动会话列表
                 HelperFragment helperFragment = (HelperFragment) getActivity().getSupportFragmentManager().findFragmentById(R.id.helper);
                 helperFragment.getContent(EaseConstant.EXTRA_USER_ID,
-                        "ceshi",
+                        "ceshi2",
                         EaseConstant.EXTRA_CHAT_TYPE,
                         EaseConstant.CHATTYPE_SINGLE);
             }

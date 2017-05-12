@@ -28,7 +28,7 @@ public class LoginActivity extends AppCompatActivity {
         findViewById(R.id.btn_login).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                EMClient.getInstance().login("ceshi2", "111111", new EMCallBack() {
+                EMClient.getInstance().login("ceshi", "111111", new EMCallBack() {
                     @Override
                     public void onSuccess() {
                         Log.e( "onSuccess: ","success!" );
